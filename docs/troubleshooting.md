@@ -1,10 +1,17 @@
 ---
 layout: docs
 title: Troubleshooting
-prev_section: deployment-methods
-next_section: sites
+prev_section: mgm
+next_section: contributing
 permalink: /docs/troubleshooting/
 ---
+
+TODO
+
+
+
+
+
 
 If you ever run into problems installing or using Jekyll, here's a few tips
 that might be of help. If the problem you’re experiencing isn’t covered below,

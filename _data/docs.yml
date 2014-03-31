@@ -25,6 +25,9 @@
   - m3_derived
   - mi_derived
   - clementine_derived
+- title: Tools
+  docs:
+  - mgm
 
 - title: Miscellaneous
   docs:

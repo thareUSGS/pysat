@@ -1,8 +1,8 @@
 ---
 layout: docs
-title: Clementine Derived Products
+title: Clementine
 prev_section: mi_derived
-next_section: troubleshooting
+next_section: mgm
 permalink: /docs/clementine_derived/
 ---
 
