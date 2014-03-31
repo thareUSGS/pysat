@@ -4,39 +4,31 @@
   - quickstart
   - installation
   - usage
-  - structure
-  - configuration
 
-- title: Your Content
+- title: Supported Imagers
   docs:
-  - frontmatter
-  - posts
-  - drafts
-  - pages
-  - variables
-  - datafiles
-  - assets
-  - migrations
+  - m3_supported
+  - sp_supported
+  - mi_supported
 
-- title: Customization
+- title: Spectral Analysis
   docs:
-  - templates
-  - permalinks
-  - pagination
-  - plugins
-  - extras
+  - continuumcorrection
+  - spectralsmoothing
+  - plottypes
+  - symbology
+  - band characterization
+  - spectrafaq
 
-- title: Deployment
+- title: Derived Products
   docs:
-  - github-pages
-  - deployment-methods
+  - m3_derived
+  - mi_derived
+  - clementine_derived
 
 - title: Miscellaneous
   docs:
   - troubleshooting
-  - sites
-  - resources
-  - upgrading
 
 - title: Meta
   docs:

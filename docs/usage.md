@@ -6,69 +6,74 @@ next_section: structure
 permalink: /docs/usage/
 ---
 
-The Jekyll gem makes a `jekyll` executable available to you in your Terminal
-window. You can use this command in a number of ways:
+Whether launched via the command line or the application binary, you should be greated by the PySAT interface, consisting of a number of docked parameter windows and a workspace.
 
-{% highlight bash %}
-$ jekyll build
-# => The current folder will be generated into ./_site
+![Main Interface](../../img/usage/mainscreen.png)
 
-$ jekyll build --destination <destination>
-# => The current folder will be generated into <destination>
-
-$ jekyll build --source <source> --destination <destination>
-# => The <source> folder will be generated into <destination>
-
-$ jekyll build --watch
-# => The current folder will be generated into ./_site,
-#    watched for changes, and regenerated automatically.
-{% endhighlight %}
+Currently PySAT works natively with M3 data in <code>.img</code> format, Kaguya Spectral Profiler data, and MI data in <code>.cub</code> format.  Additionally, a fallback driver, is available that reads any [GDAL supported](http://www.gdal.org/formats_list.html) file format.
 
 <div class="note warning">
-  <h5>Destination folders are cleaned on site builds</h5>
+  <h5>GDAL Driver</h5>
   <p>
-    The contents of <code>&lt;destination&gt;</code> are automatically
-    cleaned when the site is built.  Files or folders that are not
-    created by your site will be removed.  Do not use an important
-    location for <code>&lt;destination&gt;</code>; instead, use it as
-    a staging area and copy files from there to your web server.
+    The GDAL driver is naive, and does not support much of the spectral analysis functionality.  In fact, it does not even extract wavelength information from the image.  The driver is provided to allow you to visualize your data and apply basic image manipulation, e.g., contrast stretching or colorization.
   </p>
 </div>
 
-Jekyll also comes with a built-in development server that will allow you to
-preview what the generated site will look like in your browser locally.
+PySAT ships with two methods to interact with data: (1) open a support image file or (2) open a spectra file.
 
-{% highlight bash %}
-$ jekyll serve
-# => A development server will run at http://localhost:4000/
+<div class="note info">
+  <h5>Opening a spectral text file</h5>
+  <p>
+    PySAT expects ASCII spectral files with a header and two columns: (1) wavelength and (2) reflectance or radiance.  Future enhancement will support loading multiple spectra and potentially, binary data.
+  </p>
+</div>
 
-$ jekyll serve --detach
-# => Same as `jekyll serve` but will detach from the current terminal.
-#    If you need to kill the server, you can `kill -9 1234` where "1234" is the PID.
-#    If you cannot find the PID, then do, `ps aux | grep jekyll` and kill the instance. [Read more](http://unixhelp.ed.ac.uk/shell/jobz5.html).
+To open an image file, select <code>File > Open Image</code>.  If the reader is able to determine the input data type, it will open automatically.  Otherwise a dialog will appear asking you to select the imager used to create the product.
 
-$ jekyll serve --watch
-# => Same as `jekyll serve`, but watch for changes and regenerate automatically.
-{% endhighlight %}
+![Open Dialog](../../img/usage/fileopen.png)
 
-These are just a few of the available [configuration options](../configuration/).
-Many configuration options can either be specified as flags on the command line,
-or alternatively (and more commonly) they can be specified in a `_config.yml`
-file at the root of the source directory. Jekyll will automatically use the
-options from this file when run. For example, if you place the following lines
-in your `_config.yml` file:
+PySAT then opens the image and displays a single band, grayscale image.  In this case, we see a Level 2 Moon Mineralogy Mapper Image downloaded from the [PDS](http://pds-imaging.jpl.nasa.gov/volumes/m3.html).  We will refer to this window, where a map product is shown, as the map plot.
 
-{% highlight yaml %}
-source:      _source
-destination: _deploy
-{% endhighlight %}
+![Opened Image](../../img/usage/imageopened.png)
 
-Then the following two commands will be equivalent:
+## Spectral Analysis
+PySAT supports a range of spectral analysis functionality designed to support [Exploratory Data Analysis](http://en.wikipedia.org/wiki/Exploratory_data_analysis).  For supported multi and hyperspectral image formats (not those opened with the default reader) a pixel or spot observation (Spectral Profiler) can be selected and a spectra extracted.  We assume that this is an iterative workflow and in depth treatment of a proposed flow is provided [later in the documentation](later.md).
 
-{% highlight bash %}
-$ jekyll build
-$ jekyll build --source _source --destination _deploy
-{% endhighlight %}
+![Reflectance Plot](../../img/usage/reflectanceplot.png)
 
-For more about the possible configuration options, see the
-[configuration](../configuration/) page.
+Here we see a raw reflectance plot color coded to the point in the image.  Next, we can select a continuum correction method
+
+![Continuum Type](../../img/usage/continuumtype.png)
+
+and set the end points for linear fitting.
+
+![Continuum Limits](../../img/usage/continuumlimits.png)
+
+Finally, we select the sectra with a left click, open a contextual menu with a right click, and select continuum correct.
+
+![Continuum Corrected Context Menu](../../img/usage/continuumcontext.png)
+
+The continuum corrected spectra is automatically added to the plot and can undergo further analysis.
+
+![Continuum Corrected Spectra](../../img/usage/continuumcorrected.png)
+
+## Derived Products
+The map plot window is the 'main' window to interact with your map data.  For this short usage example, we will apply one of algorithms to derive a supplemental product - the olivine index.
+
+<div class="note warning">
+  <h5>Map Projected Data</h5>
+  <p>
+    We are still developing and testing visualization and analysis of map projected data.  Feel free to test our software with projected data and please [file an issue]({{site.repository}}/issue/new) if map projected data fails to load.
+  </p>
+</div>
+
+The map plot window consists of a menu bar, toolbar, plot, and navigation bar (from top to bottom).  In the menu bar, many algorithms for creating deried products are provided. 
+
+![Derived Products](../../img/usage/m3derived.png)
+
+From <code>M3 Algorithms > Derived </code> select <code>Olivine Index</code>.  PySAT then applies the algorithm used to derive the olivine index and renders the output in supplemental window.  This window can be saved as a <code>.png</code> and added directly to a paper or exported as a geospatially tagged geotiff at full resolution and native data type.
+
+![Derived - Olivine](../../img/usage/olivinederived.png)
+
+
+

@@ -6,27 +6,27 @@ next_section: installation
 permalink: /docs/quickstart/
 ---
 
-For the impatient, here's how to get a boilerplate Jekyll site up and running.
+For the impatient, here's how to get up and running immediately.
+
+## Binary Application (.app, .exe)
+
+If you have downloaded the OS X application file, just double click it like any other application.
+
+## Script
+If you have the script directory or an 'all-in-one' directory:
 
 {% highlight bash %}
-~ $ gem install jekyll
-~ $ jekyll new myblog
-~ $ cd myblog
-~/myblog $ jekyll serve
-# => Now browse to http://localhost:4000
+~ $ cd /spectraviewer_directory 
+~ $ python spectraviewer.py
 {% endhighlight %}
 
-That's nothing, though. The real magic happens when you start creating blog
-posts, using the front-matter to control templates and layouts, and taking
-advantage of all the awesome configuration options Jekyll makes available.
+This launches your X-server (on OS X and Windows) and displays the main interface or simply launches the interface (Linux).
 
 <div class="note info">
-  <h5>Redcarpet is the default Markdown engine for new sites</h5>
-  <p>In Jekyll 1.1, we switched the default markdown engine for sites
-     generated with <code>jekyll new</code> to Redcarpet</p>
+  <h5>OS X Python</h5>
+  <p>On OSX to run PySAT via the commandline is <code>pythonw spectraviewer.py</code>.  This ensures that PySide (PyQT) works properly and launches Python in windowed (the extra 'w') mode.</p>
 </div>
 
-If you're running into problems, ensure you have all the [requirements
-installed][Installation].
+If you're running into problems, ensure you have all the [requirements installed][Installation].
 
 [Installation]: /docs/installation/

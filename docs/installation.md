@@ -6,99 +6,64 @@ next_section: usage
 permalink: /docs/installation/
 ---
 
-Getting Jekyll installed and ready-to-go should only take a few minutes. If it
-ever becomes a pain in the ass, please [file an
+Getting PySAT installed and ready-to-go should only take a few minutes.  It it ever becomes difficult, please [file an
 issue]({{ site.repository }}/issues/new) (or submit a pull request)
 describing the issue you encountered and how we might make the process easier.
 
+The remainder of this section assumes that you would like to run PySAT via the command-line, not using one of the precompiled binaries.   If you are running a binary, we have shipped everything that you should need.  If the binary is not working, please  please [file an issue]({{ site.repository }}/issues/new) with as much information as possible.
+
 ### Requirements
 
-Installing Jekyll is easy and straight-forward, but there are a few requirements
+Installing PySAT is easy and straight-forward, but there are a few requirements
 you’ll need to make sure your system has before you start.
 
-- [Ruby](http://www.ruby-lang.org/en/downloads/)
-- [RubyGems](http://rubygems.org/pages/download)
+- [Python 2.7.x](https://store.continuum.io/cshop/anaconda/) (Free)
+- [Geospatial Data Abstraction Library](http://www.gdal.org)
 - Linux, Unix, or Mac OS X
 
 <div class="note info">
-  <h5>Running Jekyll on Windows</h5>
+  <h5>Anaconda Python</h5>
   <p>
-    While Windows is not officially supported, it is possible to get it running
-    on Windows. Special instructions can be found on our
-    <a href="../windows/#installation">Windows-specific docs page</a>.
+   While any installation of Python 2.7.x will work, we suggest using Anaconda Python.  This is a free Python distirbution that is designed to support scientific computing.  It ships with many of the other Python libraries that we depend on.  If you do not wish to utilize Anaconda, make sure that you have: NumPy, SciPy, MatPlotLib, PySide and the GDAL Python bindings installed.
   </p>
 </div>
 
-## Install with RubyGems
+## Installing GDAL on OS X
 
-The best way to install Jekyll is via
-[RubyGems](http://docs.rubygems.org/read/chapter/3). At the terminal prompt,
-simply run the following command to install Jekyll:
+The most onerous task is the installation of GDAL and the GDAL Python bindings.  For this reason, we suggest that you utilize the precompiled binaries that ship with PySAT.
+
+### OS X
+
+Other then installing from source, two options for installing GDAL are:
+
+1. [KyngChaos Binary Installer](http://www.kyngchaos.com/software/frameworks) - We suggest the GDAL Complete installation.
+2. [Homebrew](http://brew.sh) - An OS X package manager.
 
 {% highlight bash %}
-$ gem install jekyll
+~ $ brew install gdal
 {% endhighlight %}
 
-All of Jekyll’s gem dependencies are automatically installed by the above
-command, so you won’t have to worry about them at all. If you have problems
-installing Jekyll, check out the [troubleshooting](../troubleshooting/) page or
-[report an issue]({{ site.repository }}/issues/new) so the Jekyll
-community can improve the experience for everyone.
 
-<div class="note info">
-  <h5>Installing Xcode Command-Line Tools</h5>
-  <p>
-    If you run into issues installing Jekyll's dependencies which make use of
-    native extensions and are using Mac OS X, you will need to install Xcode
-    and the Command-Line Tools it ships with. Download in
-    <code>Preferences &#8594; Downloads &#8594; Components</code>.
-  </p>
-</div>
+### Windows
+Multiple options exist to support the installation of GDAL on windows.
+
+1. [Christoph Gohlke's Binary Installer](http://www.lfd.uci.edu/~gohlke/pythonlibs/#gdal)
+2. [OSGeo4W](https://trac.osgeo.org/osgeo4w/)
+3. [Tamas Szekeres' Binary Installer](http://www.gisinternals.com/sdk/)
 
 ## Pre-releases
 
-In order to install a pre-release, make sure you have all the requirements
-installed properly and run:
+If you pull our code from [our repository]({{ site.repository }}) you will be getting the freshest, pre-release code.  Currently, we do note make use of any compiled code (e.g. Cython) and you can run at the bleeding edge via the [commandline](../quickstart).
+
+To grab the prerelease:
 
 {% highlight bash %}
-gem install jekyll --pre
+~ $ git clone git://github.com/jlaura/pysat.git
+~ $ cd pysat
+~ $ python(w) spectraviewer.py
 {% endhighlight %}
 
-This will install the latest pre-release. If you want a particular pre-release,
-use the `-v` switch to indicate the version you'd like to install:
 
-{% highlight bash %}
-gem install jekyll -v '2.0.0.alpha.1'
-{% endhighlight %}
 
-If you'd like to install a development version of Jekyll, the process is a bit
-more involved. This gives you the advantage of having the latest and greatest,
-but may be unstable.
+Running pre-release assumes that you are installing all of the necessary dependencies and that they are up to date.  Additionally, preprelease might be passing all our doctests, but hiding some bugs - you have been warned.  
 
-{% highlight bash %}
-$ git clone git://github.com/jekyll/jekyll.git
-$ cd jekyll
-$ script/bootstrap
-$ bundle exec rake build
-$ ls pkg/*.gem | head -n 1 | xargs gem install -l
-{% endhighlight %}
-
-## Optional Extras
-
-There are a number of (optional) extra features that Jekyll supports that you
-may want to install, depending on how you plan to use Jekyll. These extras
-include LaTeX support, and the use of alternative content rendering engines.
-Check out [the extras page](../extras/) for more information.
-
-<div class="note">
-  <h5>ProTip™: Enable Syntax Highlighting</h5>
-  <p>
-    If you’re the kind of person who is using Jekyll, then chances are you’ll
-    want to enable syntax highlighting using <a href="http://pygments.org/">Pygments</a>
-    or <a href="https://github.com/jayferd/rouge">Rouge</a>. You should really
-    <a href="../templates/#code_snippet_highlighting">check out how to
-    do that</a> before you go any farther.
-  </p>
-</div>
-
-Now that you’ve got everything installed, let’s get to work!
