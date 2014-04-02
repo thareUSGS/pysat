@@ -30,6 +30,10 @@
   docs:
   - mgm
 
+- title: Tutorials
+  docs:
+  - band_parameters
+
 - title: Miscellaneous
   docs:
   - troubleshooting

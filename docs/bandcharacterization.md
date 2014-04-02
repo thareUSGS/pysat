@@ -6,4 +6,4 @@ next_section: spectrafaq
 permalink: /docs/bandcharacterization/
 ---
 
-TODO
+Once a spectra has been extracted and continuum corrected, PySAT provides the tools to perform band characterization as described by (Horgan citation here).
