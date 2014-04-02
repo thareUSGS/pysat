@@ -37,7 +37,7 @@ PySAT treats reflectance observation as a discreet value (which it is) and utili
 
 
 ## Polynomial 
-Dubbed the 'Horgan' method, PySAT fits a piecewise, second order polynomial to the continuum.  This method was originally developed within PySAT for use with M3 data. 
+Dubbed the 'Horgan' method, PySAT fits a piecewise, second order polynomial to the continuum.  This method seeks to find the maximum within a given range and use that local maxima as an endpoint.  To support this, PySAT has a spin box adjacent to the <code>Horgan</code> radio button.  This spinner controls the extent to which PySAT searchs for a maxima (centered on the continuum limits.  For example, if the spinner is set to 100 and the lower bound is set to 750, PySAT selects the maximum value between 650 and 850. 
 
 ![Horgan](../../img/continuumcorrection/horgan.png)
 
