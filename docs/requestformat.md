@@ -9,7 +9,7 @@ permalink: /docs/requestformat/
 PySAT currently supports a limit number of images and an even smaller number of formats for hyper-spectral analysis.  Inclusion of new formats is dependent upon input from the community.
 
 ##How can I get a new format added?
-Please [file an enhancement request]({{site.repository}}/issue/new) so that we know how to better serve you.  
+Please [file an enhancement request]({{site.repository}}/issues/new) so that we know how to better serve you.  
 
 ##What is the processes to get a new format added?
 If we already have a reader, for example for M3, but you would like the reader to support <code>.cub</code> formatted M3 data, we can quickly write an extension to our driver.
