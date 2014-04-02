@@ -10,7 +10,7 @@ Spectral profiler is a spot profiler that records down the center of an MI image
 
 <div class="note warning">
   <h5>Spot placement</h5>
-  <p>SP spot placement is approximate (naive).  We assume that spots are placed with equal spacing down the center of the reference image.  We assume that the <code>*P.jpg</code> image is shipped to us with the correct orientation and that the imager images at an equal interval.  Additionally, this method discount the curvature of the body.  If you have an improved method for surface placement [file and issue]({{site.repository}}/issue/new)</p>
+  <p>SP spot placement is approximate (naive).  We assume that spots are placed with equal spacing down the center of the reference image.  We assume that the <code>*P.jpg</code> image is shipped to us with the correct orientation and that the imager images at an equal interval.  Additionally, this method discount the curvature of the body.  If you have an improved method for surface placement [file and issue]({{site.repository}}/issues/new)</p>
 </div>
 
 Spectral profiler ships data with a <code>.sl2</code> file suffix.  This can be renamed to <code>.zip</code> and opened normally.  Within the directory are three or four files:

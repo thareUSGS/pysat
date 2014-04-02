@@ -2270,7 +2270,37 @@
       <div class="unit four-fifths">
         <article>
           <h1>Spectral Smoothing</h1>
-          <p>TODO</p>
+          <p>PySAT supports smoothing of noisy spectra. Spectral smoothing can be applied in one of two ways. Both methods are managed via the Spectral Smoothing Dock.</p>
+
+<p><img src="../../img/spectralsmoothing/dock.img" alt="Smoothing Dock" /></p>
+
+<p>For automatic smoothing, select the <code>Smooth</code> radio button. For manual smoothing, the radio buttons are ignored.</p>
+
+<p>We utilize a box filter with a two-tailed extent. For the default of 7, this means that a window (box filter) is centered on each spectra and the average computed from three neighbors above and three neighbors below.</p>
+<div class='note info'>
+  <h5>Spectral Resolution and Smoothing</h5>
+  <p>The PySAT spectral smoothing algorithm defines neighbors based upon number of bands and not spectral resolution.  Therefore, composite imstruments that have multiple spectral resolutions are smoothed based solely upon the number of bands without regard for the band spacing.</p>
+</div>
+<h2 id="automatic_smoothing">Automatic Smoothing</h2>
+
+<p>To enable automatic smoothing, select the <code>Smooth</code> radio button from the Spectral Smoothing dock. When clicking on a map window, the reflectance or continuum removed reflectacne values will be automatically smoothed using a box filter to the desired distance.</p>
+
+<h2 id="manual_smoothing">Manual Smoothing</h2>
+
+<p>Using a contextual menu, it is possible to plot the unsmoothed spectra and then add a smoothed spectra to the same plot. The amount of smoothing is controlled by the <code>Two Tailed Distance</code> spinner.</p>
+<div class='note'>
+  <h5>No Smoothing or Smoothing?</h5>
+  <p>When manually smoothing a spectra, PySAT assumes that you wish to apply the smoothing algorithm (you did click on the menu item to smooth).  Therefore, PySAT ignores the <code>No Smoothing</code> and <code>Smoothing</code> radio buttons.</p>
+</div>
+<p><img src="../../img/spectralsmoothing/context.png" alt="Smoothing Context" /></p>
+
+<p>The smoothed spectra is then added to the plot.</p>
+
+<p><img src="../../img/spectralsmoothing/smoothed.png" alt="Smoothed" /></p>
+
+<p>Within the literature, it is common to see plots with the smoothed spectra as continuous data and the raw spectra as discrete data. PySAT supports this by allowing you to alter the <a href="../symbology/">symbology of a spectra</a>.</p>
+
+<p><img src="../../img/spectralsmoothing/smoothedpts.png" alt="Smoothed with points" /></p>
           <div class="section-nav">
   <div class="left align-right">
     

@@ -12,7 +12,7 @@ PySAT currently supports 4 different continuum correction methods: two point lin
 
 Parameterization of a continuum is accomplished by first selecting the method and then defining the end points.  PySAT utilizes three 'spinners' to define up to three endpoints.  The central spinner is only used with the piece-wise linear and polynomial fits.
 
-!Continuum Bounds](../../img/continuumcorrection/continuumbounds.png)
+![Continuum Bounds](../../img/continuumcorrection/continuumbounds.png)
 
 <div class="note">
   <h5>OLS Regression</h5>
@@ -22,11 +22,22 @@ Parameterization of a continuum is accomplished by first selecting the method an
 ## Linear
 The classic continuum correction method.  We fit a line between the two end points and divide the raw reflectance by that line.
 
+![Linear](../../img/continuumcorrection/linear2.png)
+
 ## Piece-wise Linear
 As above, except we fit two lines to the spectra.  This is the method frequently used to perform a linear correction of the M3 data, where a 1um and 2um absoprtion exist.
+
+![Piece-Wise Linear](../../img/continuumcorrection/linear3.png)
+
 
 ## OLS Regression
 PySAT treats reflectance observation as a discreet value (which it is) and utilizes classic Ordinary Least Squares (OLS) regression to generate a 'best-fit' line.  This is the method used by the SP team.
 
+![OLS](../../img/continuumcorrection/regression.png)
+
+
 ## Polynomial 
 Dubbed the 'Horgan' method, PySAT fits a piecewise, second order polynomial to the continuum.  This method was originally developed within PySAT for use with M3 data. 
+
+![Horgan](../../img/continuumcorrection/horgan.png)
+
