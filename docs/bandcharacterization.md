@@ -33,7 +33,7 @@ To do this we set the limits within which PySAT will search for the minima.
 
 PySAT then plots the minima as a dot.  Mousing over the dot allows the user to identify the x,y coordinates of the point.
 
-[!Minima Plot](../../img/bandcharacterization/minimaplot.png)
+![Minima Plot](../../img/bandcharacterization/minimaplot.png)
 
 ##Band Center
 Next, we plot the band center as a  minima of a third order polynomial centered on the point of our choice (normally the band minima) extending to a user defined extent (75nm in this case).  Zooming in, the band center and fit are plotted.
