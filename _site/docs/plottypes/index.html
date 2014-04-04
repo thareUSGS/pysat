@@ -23,8 +23,11 @@
   <li class="">
     <a href="/">Overview</a>
   </li>
+  <li class="">
+    <a href="https://github.com/jlaura/pysat/releases/tag/v0.2">Download</a>
+  </li>
   <li class="current">
-    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
+    <a href="/docs/home/">Docs<span class="show-on-mobiles">s</a>
   </li>
   <li class="">
     <a href="/news/">News</a>
@@ -49,8 +52,11 @@
   <li class="">
     <a href="/">Overview</a>
   </li>
+  <li class="">
+    <a href="https://github.com/jlaura/pysat/releases/tag/v0.2">Download</a>
+  </li>
   <li class="current">
-    <a href="/docs/home/">Doc<span class="show-on-mobiles">s</span><span class="hide-on-mobiles">umentation</span></a>
+    <a href="/docs/home/">Docs<span class="show-on-mobiles">s</a>
   </li>
   <li class="">
     <a href="/news/">News</a>
@@ -1943,6 +1949,113 @@
 
     </optgroup>
     
+    <optgroup label="Tutorials">
+      
+
+
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+    </optgroup>
+    
     <optgroup label="Miscellaneous">
       
 
@@ -2270,7 +2383,71 @@
       <div class="unit four-fifths">
         <article>
           <h1>Plotting</h1>
-          <p>TODO</p>
+          <p>PySAT leverages the <a href="http://matplotlib.org">MatPlotLib</a> library to handle all of the plotting. This includes the display of image data, that is read using <a href="http://gdal.org">GDAL</a> and stored as an array.</p>
+
+<h2 id="interactive_navigation">Interactive Navigation</h2>
+
+<p>Matplotlib provides interactive navigation within a plot window via the navigation toolbar.</p>
+
+<p><img src="../../img/plottypes/toolbar.png" alt="Nav Tools" /></p>
+
+<p>For full documentation see the awesome <a href="http://matplotlib.org/1.3.1/users/navigation_toolbar.html">MatPlotLib page</a></p>
+
+<h2 id="plot_types">Plot Types</h2>
+
+<p>PySAT support single and stacked plotting in an effort to provide both exploratory data analysis capabilities and presentation ready figures.</p>
+
+<p><img src="../../img/plottypes/plottype.png" alt="Plot Type" /></p>
+
+<p>The <code>Single</code> radio button generates a new plot every time that a map plot is clicked. Alternatively, the <code>Stacked</code> radio button adds subsequent spectra to the same window with a spacing defined by the offset spin box.</p>
+
+<h2 id="moving_spectra_within_a_plot">Moving Spectra within a Plot</h2>
+
+<p>When continuum corrected spectra are are added to a plot window, An offset of 0.5 is generally sufficient to ensure adequate separation and avoid overlap. In cases when more (or less) overalp is desired a spectra can be manually moved via a contextual menu.</p>
+
+<p><img src="../../img/plottypes/contextmove.png" alt="Context Move" /></p>
+
+<p>The spectra is then ‘shifted’ by the amount specified in the <code>Offset Between Spectra</code> spinner. This value can be positive or negative.</p>
+
+<h2 id="moving_spectra_between_plots">Moving Spectra Between Plots</h2>
+
+<p>In an EDA environment, PySAT is desiged to allow the user to open many single plots, identify those spectra of interest, and then generate a unified, stacked plot.</p>
+
+<p>Below, a sample of 4 individual plots is shown. We imagine that the user has selected the four points as spectra of some interest and wishes to combine them into a single plot for comparison or inclusion as a figure in a paper.</p>
+
+<p><img src="../../img/plottypes/multisingle.png" alt="Multiple Single Plots" /></p>
+
+<p>By selecting a spectra in one of the windows and activating the contextual menu, it is possible to select <code>Add Spectra to Plot</code> and add the selected spectra to any of the open plot windows.</p>
+
+<p><img src="../../img/plottypes/multisinglecontext.png" alt="Multiple Single Plots Context" /></p>
+
+<p>Alternatively, PySAT allows you to open a new, empty plot window and add spectra.</p>
+
+<p><img src="../../img/plottypes/newstacked.png" alt="New Stacked Plot" /></p>
+
+<p>Using the same functionality via the contextual menu, it is then possible to add the spetra to the new empty plot.</p>
+
+<p><img src="../../img/plottypes/newstackedpop.png" alt="New Stacekd with Data" /></p>
+<div class='note'>
+  <h5>Spectral Spacing</h5>
+  <p>When moving spectra between plots, the <code>Offset Between Spectra</code> spinner is checked to see if we she add offset.</p>
+</div>
+<h2 id="legend">Legend</h2>
+
+<p>PySAT provides a clickable / draggable legend. To render or update the legend (because new data was added or old data was removed) the <code>Plot Options &gt; Add / Update Legend</code> option can be used.</p>
+
+<p><img src="../../img/plottypes/legend.png" alt="Legend" /></p>
+<div class='note'>
+  <h5>Legend Entries</h5>
+  <p>The values shown in the legend are the line and sample (pixel) that was clicked to select a given spectra.  We believe that this information is essential in facilitating repeatability of the analysis.  If you would like the legend to support some other identifier, [please file an enhancement request](https://github.com/jlaura/pysat/issues/new)</p>
+</div>
+<h2 id="setting_the_plot_title">Setting the Plot Title</h2>
+
+<p>Finally, PySAT support setting a custom plot title via the native MatplotLib interface. Simply click the green checkmark at the end of the toolbar.</p>
+
+<p><img src="../../img/plottypes/toolbar2.png" alt="Toolbar2" /></p>
+
+<p>This open the <code>Figure options</code> dialog where a wide variety of visualization items can be altered. For more information see the <a href="../symbology">symbology section</a> of the documentation.</p>
           <div class="section-nav">
   <div class="left align-right">
     
@@ -4199,6 +4376,119 @@
   
     
     <li class=""><a href="/docs/mgm/">MGM</a></li>
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+
+
+</ul>
+
+    
+    <h4>Tutorials</h4>
+    
+
+<ul>
+
+  
+
+  
+    
+  
+
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
     
   
     
