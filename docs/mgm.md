@@ -6,5 +6,4 @@ next_section: troubleshooting
 permalink: /docs/mgm/
 ---
 
-TODO
-
+PySAT implements the [Modified Gaussian Model](http://www.planetary.brown.edu/mgm/) as a direct port of the MatLab Code released by Brown University.
