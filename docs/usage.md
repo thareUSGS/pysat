@@ -2,7 +2,7 @@
 layout: docs
 title: Basic Usage
 prev_section: installation
-next_section: structure
+next_section: m3_supported
 permalink: /docs/usage/
 ---
 
