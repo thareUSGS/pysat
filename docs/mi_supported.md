@@ -2,7 +2,7 @@
 layout: docs
 title: Multiband Imager 
 prev_section: sp_supported
-next_section: requestformat 
+next_section: vims_supported 
 permalink: /docs/mi_supported/
 ---
 

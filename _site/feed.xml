@@ -11,10 +11,34 @@
     <title xml:lang="en">Jekyll • Simple, blog-aware, static sites</title>
     <atom:link type="application/atom+xml" href="http://jekyllrb.com/feed/" rel="self"/>
     <link>http://jekyllrb.com</link>
-    <pubDate>Fri, 11 Apr 2014 09:09:38 -0700</pubDate>
-    <lastBuildDate>Fri, 11 Apr 2014 09:09:38 -0700</lastBuildDate>
+    <pubDate>Fri, 25 Apr 2014 14:32:25 -0700</pubDate>
+    <lastBuildDate>Fri, 25 Apr 2014 14:32:25 -0700</lastBuildDate>
     <language>en-US</language>
     <description>Transform your plain text into static websites and blogs.</description>
+    
+    <item>
+        <title>PySAT 0.2.2beta Released</title>
+        <link>http://jekyllrb.com/news/2014/04/25/pysat-0-2-2-release/</link>
+        <pubDate>Fri, 25 Apr 2014 10:00:00 -0700</pubDate>
+        <dc:creator>jlaura</dc:creator>
+        <category>release</category>
+        <guid isPermaLink="false">/news/2014/04/25/pysat-0-2-2-release</guid>
+        <description><![CDATA[ <p>Major updates to PySAT including:</p>
+
+<ul>
+<li>Alpha spectral calculator that allows for simple mathematical expressions. Not all calculator functions are working, but paranthesis and basic math are in.</li>
+
+<li>Better integration between MGM and PySAT main.</li>
+
+<li>Cassini VIMs reader added. For level 1 images. See <a href="../docs/vims">VIMS Reader</a> for more information.</li>
+
+<li>Mean spectra by bounding box added to the map plot window.</li>
+
+<li>RELAB support added.</li>
+
+<li>Alpha map as QT pixmap (turned off). This significantly improves render performance for large images wrapped in no data at the expense of having to hand code a lot more functionality. Currently in the codebase as a proof of concept for large images.</li>
+</ul> ]]></description>
+    </item>
     
     <item>
         <title>PySAT 0.2.1beta Released</title>

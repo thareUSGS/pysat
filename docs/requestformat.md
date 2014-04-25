@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Request Format
-prev_section: mi_supported
+prev_section: vims_supported
 next_section: continuumcorrection
 permalink: /docs/requestformat/
 ---

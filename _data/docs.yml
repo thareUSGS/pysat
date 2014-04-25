@@ -10,6 +10,7 @@
   - m3_supported
   - sp_supported
   - mi_supported
+  - vims_supported
   - requestformat
 
 - title: Spectral Analysis
@@ -26,9 +27,15 @@
   - m3_derived
   - mi_derived
   - clementine_derived
+
+- title: Spectral Libraries
+  docs:
+  - relab
+
 - title: Tools
   docs:
   - mgm
+  - calc
 
 - title: Tutorials
   docs:

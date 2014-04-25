@@ -57,6 +57,12 @@ The continuum corrected spectra is automatically added to the plot and can under
 
 ![Continuum Corrected Spectra](../../img/usage/continuumcorrected.png)
 
+### New in Version 0.2.2
+
+PySAT supports extraction of an average spectra for a given area via a bound box toggle button.  When not selected, spectra are extract at a single pixel.  When selected, a bounding box can be drawn that averages the spectra in each band to render a single, mean spectra.
+
+![Mean Spectra](../../img/usage/meanspectra.png)
+
 ## Derived Products
 The map plot window is the 'main' window to interact with your map data.  For this short usage example, we will apply one of algorithms to derive a supplemental product - the olivine index.
 

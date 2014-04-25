@@ -1,7 +1,7 @@
 ---
 layout: docs
 title: Troubleshooting
-prev_section: mgm
+prev_section: calc
 next_section: contributing
 permalink: /docs/troubleshooting/
 ---

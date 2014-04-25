@@ -1,8 +1,8 @@
 ---
 layout: docs
 title: MGM 
-prev_section: clementine_derived
-next_section: troubleshooting
+prev_section: relab
+next_section: calc
 permalink: /docs/mgm/
 ---
 
